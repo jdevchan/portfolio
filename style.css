@@ -1,0 +1,189 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Ubuntu', sans-serif;
+  }
+
+  html {
+      scroll-behavior: smooth;
+  }
+  
+  a {
+    color: #fff;
+    text-decoration: none;
+    font-family: sans-serif;
+  }
+  
+  .container {
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+  }
+  
+  #logo {
+    font-size: 2rem;
+    font-weight: 500;
+  }
+
+  #logo span {
+      color: #00804b;
+      transition: all 0.3s ease;
+  }
+
+  #header.scroll  #logo span {
+      color: #fff;
+  }
+  
+  #header {
+    position: fixed;
+    width: 100%;
+    padding: 30px 0;
+    font-family: 'Ubuntu', sans-serif;
+    transition: all 0.3s ease;
+  }
+
+  #header.scroll {
+    background: #00804b;
+    padding: 15px 0;
+  }
+  
+  #nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  #menu {
+    display: flex;
+    list-style: none;
+    gap: 0.5rem;
+  }
+  
+  #menu a {
+    display: block;
+    padding: 0.5rem;
+    font-size: 1.125rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+
+  #menu a:hover {
+    color: #00804b;
+  }
+
+  #header.scroll #menu a:hover {
+      color: rgba(0, 0, 0, 0.8);
+  }
+
+  #btn-mobile {
+    display: none;
+  }
+
+  /* ================ home ================ */
+  #home {
+      display: flex;
+      background: #111;
+      height: 100vh;
+      color: #fff;
+      min-height: 500px;
+      font-family: 'Ubuntu', sans-serif;
+  }
+
+  #home .container {
+      margin: auto 0 auto 40px;
+  }
+
+  .home-content .hello {
+      font-size: 27px;
+  }
+
+  .home-content .name {
+      font-size: 75px;
+      font-weight: 500;
+      margin-left: -3px;
+  }
+
+  .home-content .description {
+      font-size: 40px;
+      margin: 5px 0;
+  }
+
+  .home-content .description span {
+      color: #00804b;
+      font-weight: 500;
+  }
+  
+  @media (max-width: 600px) {
+    #menu {
+      display: block;
+      position: absolute;
+      width: 100%;
+      top: 68px;
+      right: 0px;
+      background: #111;
+      height: 0;
+      text-align: center;
+      transition: all 0.6s ease;
+      z-index: 1000;
+      visibility: hidden;
+      overflow-y: hidden;
+    }
+
+    #header.scroll #menu {
+        background: #00804b;
+    }
+  
+    #nav.active #menu {
+      height: calc(100vh - 70px);
+      visibility: visible;
+      overflow-y: auto;
+    }
+  
+    #menu a {
+      padding: 1rem 0;
+      margin: 0 1rem;
+      border-bottom: 2px solid rgba(0, 0, 0, 0.05);
+    }
+  
+    #btn-mobile {
+      display: flex;
+      color: #fff;
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      border: none;
+      background: none;
+      cursor: pointer;
+      gap: 0.5rem;
+    }
+  
+    #hamburger {
+      width: 20px;
+      border-top: 2px solid;
+    }
+  
+    #hamburger::after,
+    #hamburger::before {
+      content: '';
+      display: block;
+      width: 20px;
+      height: 2px;
+      background: currentColor;
+      margin-top: 5px;
+      transition: 0.3s;
+      position: relative;
+    }
+  
+    #nav.active #hamburger {
+      border-top-color: transparent;
+    }
+  
+    #nav.active #hamburger::before {
+      transform: rotate(135deg);
+    }
+  
+    #nav.active #hamburger::after {
+      transform: rotate(-135deg);
+      top: -7px;
+    }
+  }
+  
